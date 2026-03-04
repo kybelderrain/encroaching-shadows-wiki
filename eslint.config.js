@@ -7,11 +7,11 @@ export default [
     files: ["src/**/*.js"],
     languageOptions: {
       ecmaVersion: "latest",
-      sourceType: "module"
+      sourceType: "module",
     },
     rules: {
       "no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
-      "no-console": "off"
-    }
-  }
+      "no-console": "off",
+    },
+  },
 ];

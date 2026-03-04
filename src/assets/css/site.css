@@ -1,7 +1,12 @@
 @import "https://unpkg.com/open-props";
 
 :root {
-  font-family: var(--font-neo-grotesque),system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family:
+    var(--font-neo-grotesque),
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
     sans-serif;
 
   /* Light theme (used when toggle is off). */
@@ -34,7 +39,8 @@ html:has(#theme-toggle:checked) {
 body {
   margin: 0;
   background-color: var(--c-bg);
-  background-image: radial-gradient(
+  background-image:
+    radial-gradient(
       circle at top left,
       color-mix(in srgb, var(--c-panel-2) 14%, transparent),
       transparent 55%

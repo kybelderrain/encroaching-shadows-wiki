@@ -41,4 +41,3 @@ All authored content lives under `src/`:
 - `src/assets/` – CSS, JS, and images
 
 The Eleventy build outputs the final static site to `_site/`, which is what Vercel will deploy.
-

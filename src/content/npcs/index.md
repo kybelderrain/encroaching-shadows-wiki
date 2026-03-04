@@ -12,4 +12,3 @@ Add individual NPC pages under `src/content/npcs/` with details like:
 - Allegiances and factions
 - Personality, quirks, and voice
 - Secrets and hooks
-

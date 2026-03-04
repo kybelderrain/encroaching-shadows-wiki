@@ -7,4 +7,3 @@ date: 2026-03-02
 ---
 
 Use tags like `region:*` to group locations and make them easy to search and filter later.
-

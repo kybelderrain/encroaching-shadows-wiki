@@ -7,4 +7,3 @@ date: 2026-03-02
 ---
 
 Use this section for deep worldbuilding topics and long-form lore.
-

@@ -1,0 +1,83 @@
+================================================================================
+D&D WIKI — COMMAND REFERENCE (living document)
+================================================================================
+Add or update entries here as the project grows. Run commands from the project
+root: /Users/kybelderrain/Sites/DND-Wiki (or your clone path).
+
+--------------------------------------------------------------------------------
+ENVIRONMENT (Node / nvm)
+--------------------------------------------------------------------------------
+  nvm use 20                    Use Node 20 for this shell (recommended)
+  nvm install 20                Install Node 20 if needed
+  node -v                       Check current Node version
+  npm -v                        Check npm version
+
+--------------------------------------------------------------------------------
+DEPENDENCIES
+--------------------------------------------------------------------------------
+  npm install                   Install all dependencies (after clone or when package.json changes)
+  npm ci                        Clean install (CI / lockfile exact; use when you want reproducible installs)
+
+--------------------------------------------------------------------------------
+DEVELOPMENT & BUILD
+--------------------------------------------------------------------------------
+  npm run dev                   Start Eleventy dev server with live reload (preview site locally)
+  npm run build                 Build static site into _site/ (no search index)
+  npm run search:index          Run Pagefind to index _site/ for full-text search
+  npm run build:prod            Build + search index (use for production / Vercel deploy)
+
+--------------------------------------------------------------------------------
+CODE QUALITY (before committing)
+--------------------------------------------------------------------------------
+  npm run format                Format all files with Prettier (writes changes)
+  npm run format:check          Check formatting only (CI-friendly; no write)
+  npm run lint                  Run ESLint on src/**/*.js
+  npm run lint:fix              Run ESLint with auto-fix
+
+--------------------------------------------------------------------------------
+GIT
+--------------------------------------------------------------------------------
+  git status                    See changed / untracked files
+  git add .                     Stage all changes (or use specific paths)
+  git add -p                    Stage changes interactively (patch)
+  git commit -m "message"       Commit staged changes
+  git pull                      Pull latest from remote (e.g. origin main)
+  git push                      Push commits to remote
+  git push -u origin main       First-time push: set upstream to origin main
+  git log --oneline -n 10       Show last 10 commits (one line each)
+  git remote -v                 Show remote URLs (origin, etc.)
+
+--------------------------------------------------------------------------------
+TYPICAL WORKFLOWS
+--------------------------------------------------------------------------------
+  First time / after clone:
+    nvm use 20
+    npm install
+    npm run dev
+
+  Before every commit:
+    npm run format
+    npm run lint
+    git add .
+    git commit -m "Your message"
+    git push
+
+  Production build (local test or CI):
+    npm run build:prod
+
+--------------------------------------------------------------------------------
+VERCEL (deploy)
+--------------------------------------------------------------------------------
+  Project uses vercel.json: buildCommand = npm run build:prod, output = _site.
+  Push to main branch -> production deploy. PRs/branches -> preview deploy URLs.
+
+  Optional — Vercel CLI (install once: npm i -g vercel):
+    vercel                     Deploy preview (prompts first time for link to project)
+    vercel --prod              Deploy to production
+
+--------------------------------------------------------------------------------
+FUTURE / ADDITIONS
+--------------------------------------------------------------------------------
+  (Add new commands here as we add tooling, e.g. tests, deploy scripts, etc.)
+
+================================================================================

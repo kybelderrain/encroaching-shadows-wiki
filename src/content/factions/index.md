@@ -7,4 +7,3 @@ date: 2026-03-02
 ---
 
 Track goals, resources, leaders, and relationships between factions here.
-

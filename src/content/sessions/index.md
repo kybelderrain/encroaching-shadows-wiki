@@ -11,4 +11,3 @@ This index will list individual session notes as you add them under `src/content
 - Create a new file like `src/content/sessions/session-01.md`
 - Use front matter for title, description, tags, and date
 - Link sessions to NPCs, locations, and factions using normal Markdown links
-

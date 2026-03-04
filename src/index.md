@@ -17,4 +17,3 @@ As you play, capture:
 - Magic items and artifacts
 
 Everything here is plain Markdown with front matter, rendered through Eleventy.
-

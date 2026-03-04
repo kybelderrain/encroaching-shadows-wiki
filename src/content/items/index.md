@@ -7,4 +7,3 @@ date: 2026-03-02
 ---
 
 Keep track of powerful items, who holds them, and what they can do.
-

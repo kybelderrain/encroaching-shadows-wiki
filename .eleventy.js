@@ -4,6 +4,14 @@ export default function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/assets/css");
   eleventyConfig.addWatchTarget("src/assets/js");
 
+  // Sessions: all session notes in content/sessions except index, sorted by date desc
+  eleventyConfig.addCollection("sessions", function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob("src/content/sessions/*.md")
+      .filter((item) => !item.filePathStem.endsWith("/index"))
+      .sort((a, b) => new Date(b.data.date || 0) - new Date(a.data.date || 0));
+  });
+
   return {
     dir: {
       input: "src",

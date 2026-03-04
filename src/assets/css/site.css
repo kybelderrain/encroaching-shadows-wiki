@@ -9,25 +9,11 @@
     "Segoe UI",
     sans-serif;
 
-  /* Light theme (used when toggle is off). */
-  --c-bg: var(--gray-0);
-  --c-panel: white;
-  --c-panel-2: var(--gray-1);
-  --c-text: var(--gray-9);
-  --c-text-muted: var(--gray-7);
-  --c-border: color-mix(in srgb, var(--gray-9) 12%, transparent);
-  --c-link: var(--yellow-6);
-  --c-accent: var(--yellow-6);
-
-  color-scheme: light;
-}
-
-/* Dark theme (default, matches reference image). */
-html:has(#theme-toggle:checked) {
+  /* Dark theme (site default). */
   --c-bg: var(--gray-12);
   --c-panel: color-mix(in srgb, var(--gray-11) 92%, black);
   --c-panel-2: color-mix(in srgb, var(--gray-10) 85%, black);
-  --c-text: var(--gray-1); /* soft off-white */
+  --c-text: var(--gray-1);
   --c-text-muted: var(--gray-5);
   --c-border: color-mix(in srgb, var(--gray-0) 14%, transparent);
   --c-link: var(--yellow-4);
@@ -171,21 +157,48 @@ a:hover {
   left: 0;
   right: 0;
   bottom: calc(0px - (var(--size-4)));
-  /* offset by header bottom padding so the bar aligns with the overall header baseline */
   height: 3px;
   background: transparent;
   transition: background-color 150ms ease-out;
+  z-index: -1;
 }
 
 .site-nav-link:hover::after,
 .site-nav-link:focus-visible::after {
   background: var(--c-accent);
-  /* yellow 3px bar aligned with header bottom */
 }
 
 .site-nav-link:hover,
 .site-nav-link:focus-visible {
   color: var(--c-accent);
+}
+
+/* Active (current page): full yellow background, animated from underline */
+.site-nav-link.is-active {
+  color: var(--gray-9);
+}
+
+.site-nav-link.is-active:hover,
+.site-nav-link.is-active:focus-visible {
+  color: var(--gray-9);
+}
+
+.site-nav-link.is-active::after {
+  bottom: 0;
+  height: 100%;
+  background: var(--c-accent);
+  animation: nav-active-reveal 0.4s ease-out;
+}
+
+@keyframes nav-active-reveal {
+  from {
+    height: 3px;
+    bottom: calc(0px - (var(--size-4)));
+  }
+  to {
+    height: 100%;
+    bottom: 0;
+  }
 }
 
 .nav-list {
@@ -227,6 +240,31 @@ a:hover {
 
 .card h2 {
   margin-top: 0;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-meta {
+  display: block;
+  font-size: 0.85em;
+  color: var(--c-text-muted);
+  margin-bottom: var(--size-1);
+}
+
+.listing-empty {
+  list-style: none;
+  padding: var(--size-4);
+  color: var(--c-text-muted);
+}
+
+.listing-empty code {
+  background: var(--c-panel-2);
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-1);
 }
 
 .cluster {
@@ -294,40 +332,6 @@ a:hover {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-.theme-toggle {
-  position: fixed;
-  top: var(--size-3);
-  right: var(--size-4);
-  z-index: 30;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  padding: 0.35rem 0.6rem;
-  border-radius: 999px;
-  border: 1px solid var(--c-border);
-  background: color-mix(in srgb, var(--c-panel) 90%, transparent);
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-.theme-icon {
-  display: inline-block;
-  font-size: 1rem;
-}
-
-.theme-icon--moon {
-  display: none;
-}
-
-html:has(#theme-toggle:checked) .theme-icon--sun {
-  display: none;
-}
-
-html:has(#theme-toggle:checked) .theme-icon--moon {
-  display: inline-block;
 }
 
 @media (max-width: 768px) {

@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+---
+
+<section class="listing stack">
+  <header class="stack">
+    <h1>{{ title }}</h1>
+    {% if description %}
+      <p class="page-description">{{ description }}</p>
+    {% endif %}
+  </header>
+
+  <ul class="listing-items stack">
+    {% for session in collections.sessions %}
+      <li class="card">
+        <a href="{{ session.url | url }}" class="card-link">
+          <span class="card-meta">
+            {% if session.data.date %}
+              {{ session.data.date }}
+            {% endif %}
+          </span>
+          <h2>{{ session.data.title }}</h2>
+          {% if session.data.description %}
+            <p>{{ session.data.description }}</p>
+          {% endif %}
+        </a>
+      </li>
+    {% else %}
+      <li class="listing-empty">
+        <p>No sessions yet. Add a Markdown file in <code>src/content/sessions/</code> (e.g. <code>session-01.md</code>) with <code>title</code>, <code>description</code>, and <code>date</code> in the front matter.</p>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

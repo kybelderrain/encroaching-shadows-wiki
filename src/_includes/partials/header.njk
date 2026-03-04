@@ -16,7 +16,11 @@
         {% for item in nav.sections %}
           {% if item.url != "/" %}
             <li>
-              <a href="{{ item.url | url }}" class="site-nav-link">
+              <a
+                href="{{ item.url | url }}"
+                class="site-nav-link{% if page.url == item.url %} is-active{% endif %}"
+                {% if page.url == item.url %}aria-current="page"{% endif %}
+              >
                 {{ item.title }}
               </a>
             </li>

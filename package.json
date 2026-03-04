@@ -1,0 +1,30 @@
+{
+  "name": "dnd-wiki",
+  "version": "1.0.0",
+  "description": "Static D&D campaign wiki built with Eleventy, Open Props, and Pagefind.",
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve --input=src --output=_site --watch",
+    "build": "eleventy --input=src --output=_site",
+    "search:index": "pagefind --source _site",
+    "build:prod": "npm run build && npm run search:index",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "lint": "eslint src --ext .js",
+    "lint:fix": "eslint src --ext .js --fix"
+  },
+  "keywords": [
+    "dnd",
+    "wiki",
+    "eleventy",
+    "pagefind"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "eslint": "^10.0.2",
+    "pagefind": "^1.4.0",
+    "prettier": "^3.8.1"
+  }
+}

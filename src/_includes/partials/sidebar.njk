@@ -1,0 +1,13 @@
+<aside class="site-sidebar" id="sidebar" data-js="sidebar">
+  <nav aria-label="Main">
+    <ul class="stack nav-list">
+      {% for item in nav.sections %}
+        <li>
+          <a href="{{ item.url | url }}" class="nav-link">
+            {{ item.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</aside>

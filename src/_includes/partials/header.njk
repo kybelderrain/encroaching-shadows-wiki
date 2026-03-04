@@ -1,0 +1,41 @@
+<header class="site-header">
+  <div class="site-header-inner cluster">
+    <div class="cluster">
+      <a href="{{ '/' | url }}" class="site-title">
+        <img
+          src="/assets/img/Site%20icon/Bumblefucks_Unite_D&amp;D.jpg"
+          alt=""
+          class="site-logo"
+        />
+        <span>{{ site.title }}</span>
+      </a>
+    </div>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul class="cluster site-nav-list">
+        {% for item in nav.sections %}
+          {% if item.url != "/" %}
+            <li>
+              <a href="{{ item.url | url }}" class="site-nav-link">
+                {{ item.title }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="cluster header-actions">
+      <button
+        type="button"
+        class="button-ghost header-menu-button"
+        data-js="nav-toggle"
+        aria-label="Open navigation"
+        aria-controls="sidebar"
+        aria-expanded="false"
+      >
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>

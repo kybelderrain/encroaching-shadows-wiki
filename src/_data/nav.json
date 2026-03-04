@@ -1,0 +1,32 @@
+{
+  "sections": [
+    {
+      "title": "Home",
+      "url": "/"
+    },
+    {
+      "title": "Sessions",
+      "url": "/sessions/"
+    },
+    {
+      "title": "NPCs",
+      "url": "/npcs/"
+    },
+    {
+      "title": "Locations",
+      "url": "/locations/"
+    },
+    {
+      "title": "Factions",
+      "url": "/factions/"
+    },
+    {
+      "title": "Items",
+      "url": "/items/"
+    },
+    {
+      "title": "Lore",
+      "url": "/lore/"
+    }
+  ]
+}

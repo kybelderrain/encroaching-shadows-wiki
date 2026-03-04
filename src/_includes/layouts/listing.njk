@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+---
+
+{% block content %}
+  <section class="listing stack">
+    <header class="stack">
+      <h1>{{ title }}</h1>
+      {% if description %}
+        <p class="page-description">{{ description }}</p>
+      {% endif %}
+    </header>
+
+    <ul class="listing-items stack">
+      {% for item in collection %}
+        <li class="card">
+          <a href="{{ item.url | url }}">
+            <h2>{{ item.data.title }}</h2>
+            {% if item.data.description %}
+              <p>{{ item.data.description }}</p>
+            {% endif %}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}

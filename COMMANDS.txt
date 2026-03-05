@@ -5,6 +5,25 @@ Add or update entries here as the project grows. Run commands from the project
 root: /Users/kybelderrain/Sites/DND-Wiki (or your clone path).
 
 --------------------------------------------------------------------------------
+TYPICAL WORKFLOWS
+--------------------------------------------------------------------------------
+  First time / after clone:
+    nvm use 20
+    npm install
+    npm run dev
+
+  Before every commit:
+    npm run format
+    npm run lint
+    git add .
+    git commit -m "Your message"
+    git push
+
+  Production build (local test or CI):
+    npm run build:prod
+
+
+--------------------------------------------------------------------------------
 ENVIRONMENT (Node / nvm)
 --------------------------------------------------------------------------------
   nvm use 20                    Use Node 20 for this shell (recommended)
@@ -46,24 +65,6 @@ GIT
   git push -u origin main       First-time push: set upstream to origin main
   git log --oneline -n 10       Show last 10 commits (one line each)
   git remote -v                 Show remote URLs (origin, etc.)
-
---------------------------------------------------------------------------------
-TYPICAL WORKFLOWS
---------------------------------------------------------------------------------
-  First time / after clone:
-    nvm use 20
-    npm install
-    npm run dev
-
-  Before every commit:
-    npm run format
-    npm run lint
-    git add .
-    git commit -m "Your message"
-    git push
-
-  Production build (local test or CI):
-    npm run build:prod
 
 --------------------------------------------------------------------------------
 VERCEL (deploy)

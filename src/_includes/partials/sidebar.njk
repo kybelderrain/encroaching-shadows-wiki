@@ -1,12 +1,18 @@
 <aside class="site-sidebar" id="sidebar" data-js="sidebar">
   <nav aria-label="Main">
-    <ul class="stack nav-list">
+    <ul class="stack site-nav-list site-sidebar-nav">
       {% for item in nav.sections %}
-        <li>
-          <a href="{{ item.url | url }}" class="nav-link">
-            {{ item.title }}
-          </a>
-        </li>
+        {% if item.url != "/" %}
+          <li>
+            <a
+              href="{{ item.url | url }}"
+              class="site-nav-link{% if page.url == item.url %} is-active{% endif %}"
+              {% if page.url == item.url %}aria-current="page"{% endif %}
+            >
+              {{ item.title }}
+            </a>
+          </li>
+        {% endif %}
       {% endfor %}
     </ul>
   </nav>

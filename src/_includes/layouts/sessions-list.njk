@@ -11,7 +11,7 @@ layout: layouts/base.njk
   </header>
 
   <ul class="listing-items stack">
-    {% for session in collections.sessions %}
+    {% for session in collections.sessions | default([]) %}
       <li class="card">
         <a href="{{ session.url | url }}" class="card-link">
           <span class="card-meta">

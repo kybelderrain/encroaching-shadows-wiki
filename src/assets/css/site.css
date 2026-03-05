@@ -184,8 +184,8 @@ a:hover {
 }
 
 .site-nav-link.is-active::after {
-  bottom: 0;
-  height: 100%;
+  bottom: calc(0px - (var(--size-4)));
+  height: calc(100% + 65px);
   background: var(--c-accent);
   animation: nav-active-reveal 0.4s ease-out;
 }
@@ -196,8 +196,8 @@ a:hover {
     bottom: calc(0px - (var(--size-4)));
   }
   to {
-    height: 100%;
-    bottom: 0;
+    height: 66px;
+    bottom: calc(0px - (var(--size-4)));
   }
 }
 
@@ -349,6 +349,11 @@ a:hover {
 
   .site-sidebar.is-open {
     transform: translateX(0);
+  }
+
+  /* Sidebar nav reuses main nav styling; bar sits at bottom of each link */
+  .site-sidebar .site-nav-link::after {
+    bottom: 0;
   }
 
   .site-nav {

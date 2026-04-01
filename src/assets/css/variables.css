@@ -1,0 +1,45 @@
+/* Root variables for the site
+  - colors
+  - spacing
+  - border
+*/
+@import "https://unpkg.com/open-props/normalize.min.css";
+
+:root {
+  /********* Colors *********/
+  /* White/Gray/Black */
+  --color-white: #f2f2f2;
+  --color-gray-1: #c4c4c4;
+  --color-gray-2: #969696;
+  --color-gray-3: #696969;
+  --color-gray-4: #333333;
+  --color-gray-5: #2b2b2b;
+  --color-gray-6: #232323;
+  --color-black: #1b1b1b;
+
+  /* Yellows */
+  --color-yellow-lightest: #fff9e6;
+  --color-yellow-light: #ffe68a;
+  --color-yellow: #ffbf09;
+  --color-yellow-dark: #d1a400;
+  --color-yellow-darkest: #755c00;
+
+  /********* Spacing *********/
+  --size-000: -0.5rem;
+  --size-00: -0.25rem;
+  --size-1: 0.25rem;
+  --size-2: 0.5rem;
+  --size-3: 1rem;
+  --size-4: 1.25rem;
+  --size-5: 1.5rem;
+  --size-6: 1.75rem;
+  --size-7: 2rem;
+  --size-8: 3rem;
+  --size-9: 4rem;
+  --size-10: 5rem;
+  --size-11: 7.5rem;
+  --size-12: 10rem;
+  --size-13: 15rem;
+  --size-14: 20rem;
+  --size-15: 30rem;
+}

@@ -1,10 +1,11 @@
 {
   "name": "dnd-wiki",
   "version": "1.0.0",
-  "description": "Static D&D campaign wiki built with Eleventy, Open Props, and Pagefind.",
+  "description": "Static D&D campaign wiki built with Eleventy, Open Props, Pagefind and Headless WordPress.",
   "type": "module",
   "scripts": {
     "dev": "eleventy --serve --input=src --output=_site --watch",
+    "dev:with-wp": "WP_INSECURE_TLS=1 eleventy --serve --input=src --output=_site --watch",
     "build": "eleventy --input=src --output=_site",
     "search:index": "pagefind --source _site",
     "build:prod": "npm run build && npm run search:index",
@@ -17,7 +18,9 @@
     "dnd",
     "wiki",
     "eleventy",
-    "pagefind"
+    "pagefind",
+    "headless",
+    "wordpress"
   ],
   "author": "",
   "license": "ISC",
@@ -26,6 +29,10 @@
     "@eslint/js": "^10.0.1",
     "eslint": "^10.0.2",
     "pagefind": "^1.4.0",
-    "prettier": "^3.8.1"
+    "prettier": "^3.8.1",
+    "undici": "^7.24.7"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
   }
 }

@@ -14,4 +14,14 @@ export default [
       "no-console": "off",
     },
   },
+  {
+    files: ["src/_data/**/*.js"],
+    languageOptions: {
+      globals: {
+        process: "readonly",
+        console: "readonly",
+        fetch: "readonly",
+      },
+    },
+  },
 ];
